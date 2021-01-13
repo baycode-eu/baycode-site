@@ -11,9 +11,9 @@ const Card = (props: Props) => {
   const {children, title} = props;
 
   return <div className="card">
-    <h1 className="title">
+    <h2 className="title">
       {title}
-    </h1>
+    </h2>
     <div className="contents">
       {children}
     </div>

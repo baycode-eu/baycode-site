@@ -23,13 +23,13 @@ const RecurseChild = (props) => {
 
 export default ({ stack }) => {
   return <div className="stack">
-    <h1 className="heading">
+    <h2 className="heading">
       {i18n.t('stack')}
-    </h1>
+    </h2>
     <div className="tools">
       {stack?.map((item: Stack, key) => (
         <div key={key} className={item.className}>
-          <h2>{item.title}</h2>
+          <h3>{item.title}</h3>
           <ul>
             {item.children && item.children.map(({
                title,

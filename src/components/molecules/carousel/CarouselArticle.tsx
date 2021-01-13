@@ -20,7 +20,7 @@ export default ({article, onPress}: Props) => {
     </div>
     <div className="describe">
       <div className="title">
-        <h3>{article.title}</h3>
+        <h4>{article.title}</h4>
       </div>
       <div className="description">
         <p>{article.shortDescription || article.description}</p>

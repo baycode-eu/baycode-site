@@ -4,9 +4,11 @@ import Card from "../../molecules/common/Card";
 
 
 export default (props) => <Card title={i18n.t("welcome.security.title")}>
-  <h2>{i18n.t("welcome.security.subtitle")}</h2>
-  <h3>
+  <h3>{i18n.t("welcome.security.subtitle")}</h3>
+  <h4>
     <p>{i18n.t("welcome.security.trait")}</p>
+  </h4>
+  <h4>
     <p><b>{i18n.t("welcome.security.advantage")}</b></p>
-  </h3>
+  </h4>
 </Card>
