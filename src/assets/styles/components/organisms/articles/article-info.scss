@@ -4,8 +4,8 @@
 .article-info {
   width: 100%;
   padding: 32px 16px 32px 16px;
-  background: $white;
   box-shadow:  5px 5px 10px $white-neumorphic-darker, 0, 0, 0;
+
   & > .author-information {
     margin-top: 16px;
     max-width: $mobile-width;

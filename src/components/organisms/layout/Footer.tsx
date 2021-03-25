@@ -8,7 +8,7 @@ export default (props) => {
   const dispatch = useDispatch()
   return <div className="footer">
     <a onClick={() => dispatch(openContactModal())}>
-      Krystian Bajno © {props.currentYear}
+      Baycode © {props.currentYear}
     </a>
   </div>;
 }

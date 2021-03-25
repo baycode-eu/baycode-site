@@ -4,7 +4,7 @@ export default () => ({
             value: 1,
             density: {
                 enable: true,
-                value_area: 20
+                value_area: 40
             }
         },
         color: {
@@ -37,7 +37,7 @@ export default () => ({
         },
         line_linked: {
             random: true,
-            enable: true,
+            enable: false,
             distance: 64,
             color: "#becacb",
             opacity: 1,

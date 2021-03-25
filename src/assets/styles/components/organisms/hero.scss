@@ -1,6 +1,7 @@
 @import "../../definitions/colors";
 @import "../../styles";
 
+$max-dynamic-width: 1640px;
 
 .hero {
   z-index: 300;
@@ -15,20 +16,31 @@
   text-align:center;
   word-wrap:break-word;
 
-
   & > .title {
     color: $logo-color;
     font-weight: bolder;
     font-size:calc(32px + 3vw);
+
+    @media screen and (min-width: $max-dynamic-width) {
+      font-size: $font-size-h1;
+    }
   }
+
   & > .subtitle {
     margin-top: 32px;
     font-size: calc(24px + 2vw);
     font-weight: 300;
+    @media screen and (min-width: $max-dynamic-width) {
+      font-size: $font-size-h2;
+    }
   }
   & > .domain {
     margin-top:32px;
     font-size: calc(13px + 1vw);
+    @media screen and (min-width: $max-dynamic-width) {
+      font-size: $font-size-h3;
+    }
+
     max-width:800px;
 
     font-weight: 1000;

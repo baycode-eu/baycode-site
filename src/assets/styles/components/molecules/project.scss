@@ -29,6 +29,9 @@
     }
     & > .complexity {
       font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
       &.beginner {
         color: $prussian-blue;
       }
@@ -44,6 +47,7 @@
 
     & > .client {
       & > .name {
+        line-height: 32px;
         background: $logo-color;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -72,7 +76,7 @@
       margin-top: 16px;
       & > li {
         display: inline-block;
-
+        letter-spacing: 1px;
         padding-bottom: 8px;
         line-height: 16px;
         font-size: 12px;
@@ -103,6 +107,7 @@
     & > .classes {
       color: #7c7c7c;
       margin-top: 16px;
+      font-size:16px;
       font-weight: 300;
 
       & > .classtype {

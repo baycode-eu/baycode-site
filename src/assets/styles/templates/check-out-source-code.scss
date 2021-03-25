@@ -10,9 +10,12 @@
   }
 
   & > .check-out {
+    font-weight:bold;
+    font-size:16px;
     line-height: normal;
     text-align:center;
     margin-top: 16px;
+    padding: 0 16px;
     display:flex;
     justify-content:center;
   }

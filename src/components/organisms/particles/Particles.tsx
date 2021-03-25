@@ -8,7 +8,6 @@ export default (props) => {
       position: "absolute",
       top: props.top || 0,
       width: '100vw',
-      height: '100vw',
       left: 0,
       overflow: "hidden"
     }}
