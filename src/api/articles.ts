@@ -10,14 +10,6 @@ export interface ArticlesApi {
   getArticleBySlug: (slug: string) => Entry<Article>
 }
 
-export const getSingleEntry = (response) => {
-  if (response.items.length) {
-    return response.items[0]
-  } else {
-    throw new Error("Not found")
-  }
-}
-
 export default (client: ContentfulClientInterface) => ({
   getArticles: async (page = 0, limit = 10) => {
     const skip = page * limit;
@@ -39,3 +31,11 @@ export default (client: ContentfulClientInterface) => ({
     return getSingleEntry(response);
   }
 })
+
+export const getSingleEntry = (response) => {
+  if (response.items.length) {
+    return response.items[0]
+  } else {
+    throw new Error("Not found")
+  }
+}

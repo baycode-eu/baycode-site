@@ -53,7 +53,7 @@ export default ({ stack }) => {
         <li>Backend Dev</li>
         <li>Frontend Dev</li>
         <li>Mobile Dev</li>
-        <li>Security & Penetration Testing</li>
+        <li>Cyber Security</li>
         <li>Cloud & Dev Ops</li>
         <li>Consultancy</li>
       </ul>

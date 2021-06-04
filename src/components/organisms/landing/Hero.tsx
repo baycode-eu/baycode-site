@@ -7,7 +7,7 @@ export default (props) => (
     baycode.eu
   </h1>
   <ul className="subtitle">
-    <li>Software Engineering & Cyber Security</li>
+    <li>Software Engineering</li>
   </ul>
   <ul className="domain">
     <li>🚀 Modern technologies</li>
@@ -15,8 +15,7 @@ export default (props) => (
     <li>🖤 Backend</li>
     <li>📱 Mobile</li>
     <li>☁️ Cloud</li>
-    <li>💼 Consultancy</li>
-    <li>👮🏻 Offensive Security</li>
+    <li>👮🏻 Cyber Security</li>
     <li>🎯 Agile</li>
   </ul>
 </div>

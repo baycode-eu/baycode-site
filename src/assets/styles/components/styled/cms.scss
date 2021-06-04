@@ -1,5 +1,6 @@
 @import "../../definitions/fonts";
 @import "../../definitions/colors";
+@import "../../styles.scss";
 
 h1.contentful, h2.contentful, h3.contentful, h4.contentful,
 h5.contentful h6.contentful {
@@ -8,29 +9,31 @@ h5.contentful h6.contentful {
 }
 
 h1.contentful {
-  font-size: $font-size-h1
+  font-size: $font-size-h1;
 }
 h2.contentful {
-  font-size: $font-size-h2
+  font-size: $font-size-h2;
 }
 h3.contentful {
   font-size: $font-size-h3;
 }
 h4.contentful {
-  font-size: $font-size-h3;;
+  font-size: $font-size-h4;
 }
 h5.contentful {
-  font-size: $font-size-h3;;
+  font-size: $font-size-h4;
 }
 h6.contentful {
-  font-size: $font-size-h3;;
+  font-size: $font-size-h4;
 }
 
 hr.contentful {
   margin-bottom: 16px;
   border: 1px solid #dae2e2;
 }
+
 .contentful {
+  -webkit-text-size-adjust:none;
   outline: none;
   white-space: pre-wrap;
   overflow-wrap: break-word;
@@ -66,10 +69,12 @@ hr.contentful {
   &.code {
     display: flex;
     align-items:center;
-    background-color: #3b4040;
-    font-size: calc(12px + 0.2vw) !important;
-    color: white;
     padding: 20px;
+
+    @media screen and (min-width: $mobile-width) {
+      font-size: 14px !important;
+    }
+    font-size: 12px !important;
   }
 
   &.text {

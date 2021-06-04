@@ -44,6 +44,7 @@ $blogBreak: 940px;
     max-width: $blogBreak;
     width: 100%;
     min-height: 300px;
+    padding: 0px 8px;
 
     & > .article-information {
       display: flex;
