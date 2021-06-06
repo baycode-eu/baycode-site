@@ -14,15 +14,16 @@ interface Props {
   seo?: any
   children: any
   article?: boolean
+  noParticles?: boolean
   menu: any
 }
 
 export default  (props: Props) => {
-  const {children, menu, article, seo} = props
+  const {children, menu, article, seo, noParticles} = props
   const data = useStaticQuery(query)
 
   return <div className="layout">
-    <Particles height={height()}/>
+    {!noParticles && <Particles height={height()}/>}
     <NotificationContainer />
     <SEO
       title={seo && seo.title || data.site.siteMetadata.title}

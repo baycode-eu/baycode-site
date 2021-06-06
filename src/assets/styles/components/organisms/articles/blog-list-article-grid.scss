@@ -1,0 +1,12 @@
+@import "../../../styles";
+
+.blog-list-article-grid {
+  & > * {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

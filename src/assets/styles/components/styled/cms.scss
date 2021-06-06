@@ -32,6 +32,18 @@ hr.contentful {
   border: 1px solid #dae2e2;
 }
 
+ul {
+  li {
+    & > p.contentful {
+      padding: 0 !important;
+      &:before {
+        content: "• ";
+      }
+    }
+
+  }
+}
+
 .contentful {
   -webkit-text-size-adjust:none;
   outline: none;

@@ -4,6 +4,7 @@ import MenuFactory from "../factories/MenuFactory";
 import MenuEntryFactory from "../factories/MenuEntryFactory";
 import { MutableRefObject } from "react"
 import * as React from "react"
+import {redirect} from "../../utils/navigation"
 
 export class LandingPageMenuBuilder implements Builder {
   private menu: Menu;
@@ -39,8 +40,8 @@ export class LandingPageMenuBuilder implements Builder {
       this.menuEntryFactory.create({
         title: "Blog",
         hiddenMobile: true,
-        onPress:() => this.blogRef.current.scrollIntoView({behavior: "smooth"})}
-      )
+        onPress: () => redirect(`/blog/`)
+      })
     )
 
     this.menu.addMenuEntry(

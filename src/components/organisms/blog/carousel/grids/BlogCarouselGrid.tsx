@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import Article from "../../../../models/Article";
-import CarouselArticleComponent from "../../../molecules/carousel/CarouselArticle"
+import Article from "../../../../../models/Article";
+import CarouselArticleComponent from "../../../../molecules/carousel/CarouselArticle"
 import Carousel from 'react-grid-carousel'
 
 interface Props {

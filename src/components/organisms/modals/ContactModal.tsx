@@ -1,8 +1,6 @@
 import * as React from "react"
 import "../../../assets/styles/components/modals/get-an-estimate-modal.scss"
 
-import Icon from "../../../assets/images/icon.svg"
-
 import Modal from '@trendmicro/react-modal';
 
 import EstimateForm from "../forms/EstimateForm";

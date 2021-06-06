@@ -13,7 +13,7 @@ import withEstimate from "../../components/hoc/withEstimate";
 interface State {}
 interface Props {
   slug?: string,
-  onBlogCarouselItemPressed?: (item) => void
+  onBlogItemPressed?: (item) => void
   selectedArticle?: Article
   getArticleBySlug: (slug: string) => Article;
   selectArticle: (article: Article) => void;

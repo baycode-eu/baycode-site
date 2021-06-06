@@ -1,7 +1,7 @@
 import * as React from "react"
 
 import BlogArticlePageTemplate from "../templates/BlogArticlePageTemplate"
-import BlogCarousel from "../organisms/carousel/BlogCarousel"
+import BlogCarousel from "../organisms/blog/carousel/BlogCarousel"
 import ArticleInfo from "../organisms/blog/ArticleInfo"
 import ArticleContents from "../organisms/blog/ArticleContents"
 import ContactModal from "../organisms/modals/ContactModal"
@@ -24,7 +24,8 @@ export default (props) => {
     />}
     blogCarousel={props.articles && <BlogCarousel
       articles={props.articles}
-      onItemPressed={props.onBlogCarouselItemPressed}
+      onItemPressed={props.onBlogItemPressed}
+      onBlogClicked={props.onBlogClicked}
     />}
     contactModal={<ContactModal
       {...props}

@@ -8,6 +8,7 @@ export interface ArticlesApi {
   getArticles: (page?: number, limit?: number)
     => ContentfulCollection<Article[]>
   getArticleBySlug: (slug: string) => Entry<Article>
+  searchArticles: (phrase: string) => ContentfulCollection<Article[]>
 }
 
 export default (client: ContentfulClientInterface) => ({
@@ -19,6 +20,39 @@ export default (client: ContentfulClientInterface) => ({
       skip,
       limit
     })
+  },
+
+  searchArticles: async (phrase?: string) => {
+    let entries = []
+
+    const values = await Promise.all([
+      await client.getEntries({
+        content_type: CONTENT_TYPE,
+        "fields.title[match]": phrase,
+        order:'-fields.createdAt',
+      }),
+      await client.getEntries({
+        content_type: CONTENT_TYPE,
+        "fields.description[match]": phrase,
+        order: '-fields.createdAt',
+      }),
+      await client.getEntries({
+        content_type: CONTENT_TYPE,
+        "fields.shortDescription[match]": phrase,
+        order:'-fields.createdAt',
+      })
+    ])
+
+    values.map(value => {
+      entries.push(...value.items)
+    })
+
+    entries = entries.map(e => JSON.stringify(e))
+    entries = [...new Set(entries)];
+    entries = entries.map(e => JSON.parse(e))
+
+    values[0].items = entries;
+    return values[0];
   },
 
   getArticleBySlug: async (slug: string) => {

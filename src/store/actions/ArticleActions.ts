@@ -60,6 +60,17 @@ export const getArticles = (pageNumber?: number) => async (
   return response.items.map(item => fromContentfulModel(item))
 }
 
+export const searchArticles = (searchPhrase?: string) => async (
+  dispatch,
+  getState,
+  {articlesApi}: {articlesApi: ArticlesApi}
+) => {
+  if (!searchPhrase || !searchPhrase.length) return dispatch(reloadArticles());
+  await dispatch(clearArticles());
+  const response = await articlesApi.searchArticles(searchPhrase)
+  dispatch(setArticles(response.items.map(item => fromContentfulModel(item))));
+}
+
 export const reloadArticles = () => async (
   dispatch: any,
   getState: any,

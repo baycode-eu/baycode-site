@@ -1,10 +1,16 @@
 const path = require("path")
 
-const Routing = ({graphql, actions}) => {
+const Routing = ({actions}) => {
   const {createPage} = actions
 
   createPage({
-    path: "/blog/",
+    path: "/blog",
+    matchPath: "/blog",
+    component: path.resolve("./src/pages/blog/index.tsx"),
+  })
+
+  createPage({
+    path: "/blog/slug",
     matchPath: "/blog/:slug",
     component: path.resolve("./src/pages/blog/_slug.tsx"),
   })

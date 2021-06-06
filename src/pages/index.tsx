@@ -20,9 +20,9 @@ import withContact from "../components/hoc/withContact"
 import { MutableRefObject } from "react"
 
 interface Props {
-  blogRef: MutableRefObject<HTMLDivElement>,
-  stackRef: MutableRefObject<HTMLDivElement>
-  submitEstimateForm,
+  blogRef: MutableRefObject<HTMLDivElement>;
+  stackRef: MutableRefObject<HTMLDivElement>;
+  submitEstimateForm;
 
   articles: Article[];
   projects: Project[];
@@ -38,7 +38,8 @@ interface Props {
 
   toggleProjectsDrawerVisible: () => void;
   projectsDrawerVisible: boolean;
-  onBlogCarouselItemPressed?: (item) => void
+  onBlogItemPressed?: (item) => void
+  onBlogClicked?: () => void
 }
 
 interface State {}

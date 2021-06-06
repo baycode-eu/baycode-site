@@ -55,6 +55,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "rsuite": "^4.8.4",
+    "simple-debouncer": "^1.0.3",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {

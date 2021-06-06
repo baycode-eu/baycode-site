@@ -1,7 +1,24 @@
 @import "../definitions/colors";
+@import "../definitions/fonts";
 
 .blog-carousel {
   z-index: 2;
+  & > .blog {
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 32px;
+
+    font-weight:800;
+    background: -webkit-linear-gradient($logo-color, $gamboge);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height:48px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   & > .title {
     background: -webkit-linear-gradient($logo-color, $gamboge);
     -webkit-background-clip: text;

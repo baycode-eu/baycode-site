@@ -1,6 +1,6 @@
 import * as React from "react";
 import LandingPageTemplate from "../templates/LandingPageTemplate";
-import BlogCarousel from "../organisms/carousel/BlogCarousel";
+import BlogCarousel from "../organisms/blog/carousel/BlogCarousel";
 import GetInTouch from "../organisms/common/GetAQuote";
 import LottieAnimation from "../molecules/common/LottieAnimation";
 
@@ -34,11 +34,12 @@ interface Props {
   openContactModal
   closeContactModal
   submitEstimateForm
-  onBlogCarouselItemPressed
+  onBlogItemPressed
   toggleProjectsDrawerVisible
   projectsDrawerVisible
   stackRef
   blogRef
+  onBlogClicked
 }
 
 const LandingPage = (props: Props) => {
@@ -65,7 +66,8 @@ const LandingPage = (props: Props) => {
     blogCarousel={
       props.articles.length ? <BlogCarousel
         articles={props.articles}
-        onItemPressed={props.onBlogCarouselItemPressed}
+        onItemPressed={props.onBlogItemPressed}
+        onBlogClicked={props.onBlogClicked}
       /> : <></>
     }
     stack={

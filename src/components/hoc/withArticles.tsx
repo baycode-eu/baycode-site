@@ -9,18 +9,25 @@ import {
   clearArticles,
   reloadArticles,
   getArticleBySlug,
-  selectArticle
+  selectArticle,
+  searchArticles
 } from "../../store/actions/ArticleActions"
 
-const onBlogCarouselItemPressed = async item => {
+const onBlogItemPressed = async item => {
   if (!item.slug) return NotificationManager.info("To be announced")
   redirect(`/blog/${item.slug}`)
 }
 
+const onBlogClicked = async () => {
+  redirect(`/blog/`)
+}
+
 const mapDispatchToProps = dispatch => ({
-  onBlogCarouselItemPressed: item => onBlogCarouselItemPressed(item),
+  onBlogItemPressed: item => onBlogItemPressed(item),
+  onBlogClicked: () => onBlogClicked(),
   selectArticle: (article: Article) => dispatch(selectArticle(article)),
   reloadArticles: () => dispatch(reloadArticles()),
+  searchArticles: (search) => dispatch(searchArticles(search)),
   clearArticles: () => dispatch(clearArticles()),
   getArticleBySlug: (slug: string) =>
     dispatch(getArticleBySlug(slug))

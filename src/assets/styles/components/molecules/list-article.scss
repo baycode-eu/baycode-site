@@ -1,0 +1,73 @@
+@import '../../definitions/colors';
+@import '../../styles';
+
+.list-article {
+  display: flex;
+  flex-direction: row;
+
+  max-width: 600px;
+
+  min-height: 100px;
+  background: $white;
+  box-shadow:  22px 22px 44px #cdd5ca,
+  -22px -22px 44px #ffffff;
+  padding: 8px;
+  border-radius: 8px;
+
+  &.locked {
+    opacity: 0.382;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & > .article-body {
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0.7;
+
+    & > .title-description {
+      & > .title {
+        font-weight: 300;
+        color: $purple;
+        margin-top: 8px;
+      }
+      & > .description {
+        margin-top: 16px;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+    }
+
+    & > .rest {
+      margin-top: 16px;
+      & > .list-author {
+        display: flex;
+        flex-direction: row;
+      }
+      & > .createdAt {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  & > .image {
+    display:flex;
+    flex: 0.3;
+    max-height: 160px;
+
+    & > img {
+      border-radius: 8px;
+      max-height: 160px;
+      @media screen and (min-width: $mobile-width) {
+        min-height:160px;
+      }
+      width: 100%;
+      object-fit: cover;
+      background: $white;
+    }
+  }
+}
