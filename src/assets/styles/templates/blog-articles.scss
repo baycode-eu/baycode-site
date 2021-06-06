@@ -8,6 +8,7 @@ $blogBreak: 940px;
   & > .blog-articles-header {
     font-size: $font-size-h3;
     margin-top: 32px;
+    z-index: 1;
   }
 
   & > .blog-search-section {
