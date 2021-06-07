@@ -9,6 +9,7 @@ export default (props) => {
     blogSearch,
     contactModal,
     projectsModal,
+    endRef
   } = props
 
   return <MainLayout
@@ -22,6 +23,7 @@ export default (props) => {
       <section className="blog-list-section">
         {blogList}
       </section>
+      <div className="end" ref={endRef}/>
       {contactModal}
       {projectsModal}
     </div>

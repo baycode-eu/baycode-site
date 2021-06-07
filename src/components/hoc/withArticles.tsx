@@ -4,13 +4,15 @@ import { compose } from "redux";
 import Article from "../../models/Article"
 import {NotificationManager} from 'react-notifications';
 import {redirect} from "../../utils/navigation"
+import {debounce} from 'simple-debouncer'
 
 import {
   clearArticles,
   reloadArticles,
   getArticleBySlug,
   selectArticle,
-  searchArticles
+  searchArticles,
+  loadMoreArticlesDispatcher
 } from "../../store/actions/ArticleActions"
 
 const onBlogItemPressed = async item => {
@@ -23,6 +25,7 @@ const onBlogClicked = async () => {
 }
 
 const mapDispatchToProps = dispatch => ({
+  loadMoreArticles: () => dispatch(loadMoreArticlesDispatcher()),
   onBlogItemPressed: item => onBlogItemPressed(item),
   onBlogClicked: () => onBlogClicked(),
   selectArticle: (article: Article) => dispatch(selectArticle(article)),

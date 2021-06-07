@@ -12,7 +12,7 @@ export interface ArticlesApi {
 }
 
 export default (client: ContentfulClientInterface) => ({
-  getArticles: async (page = 0, limit = 10) => {
+  getArticles: async (page = 0, limit = 4) => {
     const skip = page * limit;
     return client.getEntries({
       content_type: CONTENT_TYPE,

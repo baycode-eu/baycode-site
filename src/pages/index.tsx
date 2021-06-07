@@ -40,11 +40,13 @@ interface Props {
   projectsDrawerVisible: boolean;
   onBlogItemPressed?: (item) => void
   onBlogClicked?: () => void
+  loadMoreArticles: () => void
 }
 
 interface State {}
 class LandingPageController extends React.PureComponent<Props, State>
 {
+
   render = () => <LandingPageView
     {...this.props}
   />;

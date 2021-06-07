@@ -4,6 +4,7 @@ import Article from "../../models/Article";
 export type ArticleState = Readonly<{
   readonly articles: Article[]
   readonly currentPage: number,
+  readonly total: number,
   readonly articlesLoading: boolean
   readonly selectedArticle: Article | null
 }>
@@ -11,6 +12,7 @@ export type ArticleState = Readonly<{
 export const initialState: ArticleState = {
   articles: [],
   currentPage: 0,
+  total: 0,
   articlesLoading: false,
   selectedArticle: null
 }
@@ -21,6 +23,12 @@ export default function articleReducer(state = initialState, action: ArticleActi
       return {
         ...state,
         articles: action.payload
+      }
+    }
+    case actionType.SET_TOTAL: {
+      return {
+        ...state,
+        total: action.payload
       }
     }
 
@@ -35,6 +43,13 @@ export default function articleReducer(state = initialState, action: ArticleActi
       return {
         ...state,
         selectedArticle: action.payload
+      }
+    }
+
+    case actionType.SET_CURRENT_PAGE: {
+      return {
+        ...state,
+        currentPage: action.payload
       }
     }
 

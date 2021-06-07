@@ -7,6 +7,7 @@ import BlogSearch from "../organisms/blog/BlogSearch"
 
 export default (props) => {
   return <BlogArticlesPageTemplate
+    endRef={props.endRef}
     blogSearch={
       <BlogSearch
         onSearch={props.searchArticles}
@@ -16,7 +17,6 @@ export default (props) => {
       <BlogList
         articles={props.articles}
         onItemPressed={props.onBlogItemPressed}
-        endRef={props.endRef}
       />
     }
     contactModal={

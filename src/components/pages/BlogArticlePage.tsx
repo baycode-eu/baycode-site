@@ -4,8 +4,6 @@ import BlogArticlePageTemplate from "../templates/BlogArticlePageTemplate"
 import BlogCarousel from "../organisms/blog/carousel/BlogCarousel"
 import ArticleInfo from "../organisms/blog/ArticleInfo"
 import ArticleContents from "../organisms/blog/ArticleContents"
-import ContactModal from "../organisms/modals/ContactModal"
-import { Projects } from "../organisms/projects/Projects"
 
 export default (props) => {
   return <BlogArticlePageTemplate
@@ -27,20 +25,6 @@ export default (props) => {
       onItemPressed={props.onBlogItemPressed}
       onBlogClicked={props.onBlogClicked}
     />}
-    contactModal={<ContactModal
-      {...props}
-      contact={props.contact}
-      onClose={props.closeContactModal}
-      visible={props.contactModalVisible}
-    />}
-    projectsModal={
-      <Projects
-        visible={props.projectsDrawerVisible}
-        toggle={props.toggleProjectsDrawerVisible}
-        projects={props.projects}
-        companies={props.companies}
-      />
-    }
     {...props}
   />
 }

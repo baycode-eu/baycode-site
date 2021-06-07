@@ -40,6 +40,7 @@ interface Props {
   stackRef
   blogRef
   onBlogClicked
+  loadMoreArticles
 }
 
 const LandingPage = (props: Props) => {
@@ -68,6 +69,7 @@ const LandingPage = (props: Props) => {
         articles={props.articles}
         onItemPressed={props.onBlogItemPressed}
         onBlogClicked={props.onBlogClicked}
+        onBlogEndReached={props.loadMoreArticles}
       /> : <></>
     }
     stack={

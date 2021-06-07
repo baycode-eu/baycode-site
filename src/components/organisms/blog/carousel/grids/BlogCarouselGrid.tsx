@@ -2,15 +2,16 @@ import * as React from "react";
 
 import Article from "../../../../../models/Article";
 import CarouselArticleComponent from "../../../../molecules/carousel/CarouselArticle"
-import Carousel from 'react-grid-carousel'
+import Carousel from '../react-grid-carousel/'
 
 interface Props {
   articles: Article[]
   onItemPressed: (item) => {}
+  onBlogEndReached: () => void
 }
 
 export default (props: Props) => {
-  const {articles, onItemPressed} = props;
+  const {articles, onItemPressed, onBlogEndReached} = props;
   return <Carousel
     cols={4}
     rows={1}
@@ -18,6 +19,7 @@ export default (props: Props) => {
     scrollSnap={true}
     showDots={true}
     dotColorActive={"#0080e3ff"}
+    onLastPage={onBlogEndReached}
     loop
   >
     {articles && articles.map((article, key) => {

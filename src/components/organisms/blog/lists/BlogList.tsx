@@ -5,7 +5,6 @@ const BlogList = (props) => {
   const {
     articles,
     onItemPressed,
-    endRef
   } = props;
 
   return <div className="blog-list">
@@ -13,7 +12,6 @@ const BlogList = (props) => {
       articles={articles}
       onItemPressed={onItemPressed}
     />
-    <div className="end" ref={endRef}/>
   </div>
 }
 
