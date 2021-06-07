@@ -58,11 +58,6 @@ const ItemSet = styled.div`
     grid-template-columns: ${({ cols, rows }) =>
       `repeat(${cols * rows}, 100%)`};
     grid-template-rows: 1fr;
-
-    &:last-of-type > ${/* sc-sel */ Item}:last-of-type {
-      padding-right: ${({ gap }) => `${gap}px`};
-      margin-right: ${({ gap }) => `-${gap}px`};
-    }
   }
 `
 
@@ -128,29 +123,12 @@ const Carousel = ({
     smoothscroll.polyfill()
   }, [])
 
-  useEffect(() => {
-    const { cols, rows, gap, loop, autoplay } = breakpointSetting || {}
-    setCols(cols || colsProp)
-    setRows(rows || rowsProp)
-    setGap(parseGap(gap || gapProp))
-    setLoop(loop || loopProp)
-    setAutoplay(autoplay || autoplayProp)
-    setCurrentPage(0)
-  }, [
-    breakpointSetting,
-    colsProp,
-    rowsProp,
-    gapProp,
-    loopProp,
-    autoplayProp,
-    onLastPageProp,
-    parseGap
-  ])
 
   const handleRailWrapperResize = useCallback(() => {
     railWrapperRef.current &&
-      setRailWrapperWidth(railWrapperRef.current.offsetWidth)
+    setRailWrapperWidth(railWrapperRef.current.offsetWidth)
   }, [railWrapperRef])
+
 
   const setResizeHandler = useCallback(() => {
     addResizeHandler(`gapCalculator-${randomKey}`, handleRailWrapperResize)
@@ -161,6 +139,7 @@ const Carousel = ({
     removeResizeHandler(`gapCalculator-${randomKey}`)
     setHasSetResizeHandler(false)
   }, [randomKey])
+
 
   const parseGap = useCallback(
     gap => {
@@ -234,6 +213,25 @@ const Carousel = ({
     [itemList, itemAmountPerSet, scrollSnap]
   )
 
+  useEffect(() => {
+    const { cols, rows, gap, loop, autoplay } = breakpointSetting || {}
+    setCols(cols || colsProp)
+    setRows(rows || rowsProp)
+    setGap(parseGap(gap || gapProp))
+    setLoop(loop || loopProp)
+    setAutoplay(autoplay || autoplayProp)
+    setCurrentPage(0)
+  }, [
+    breakpointSetting,
+    colsProp,
+    rowsProp,
+    gapProp,
+    loopProp,
+    autoplayProp,
+    onLastPageProp,
+    parseGap
+  ])
+
   const page = Math.ceil(itemList.length / itemAmountPerSet)
 
   const handlePrev = useCallback(() => {
@@ -246,7 +244,7 @@ const Carousel = ({
 
       return prevPage
     })
-  }, [loop, page])
+  }, [loop, page, onLastPageProp])
 
   const handleNext = useCallback(
     (isMobile = false) => {
@@ -285,7 +283,7 @@ const Carousel = ({
         })
       }
     },
-    [loop, page, gap, railWrapperRef, scrollSnap]
+    [loop, page, gap, railWrapperRef, scrollSnap, onLastPageProp]
   )
 
   const startAutoplayInterval = useCallback(() => {

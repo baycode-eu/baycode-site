@@ -7,6 +7,7 @@ import BlogSearch from "../organisms/blog/BlogSearch"
 
 export default (props) => {
   return <BlogArticlesPageTemplate
+    menu={props.menu}
     endRef={props.endRef}
     blogSearch={
       <BlogSearch

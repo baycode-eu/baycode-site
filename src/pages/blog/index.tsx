@@ -5,9 +5,12 @@ import { compose } from "redux"
 import Article from "../../models/Article"
 import { MutableRefObject } from "react"
 import {debounce} from 'simple-debouncer'
+import withBlogMenu from "../../components/hoc/menus/withBlogMenu"
+import Menu from "../../menu/models/Menu"
 
 interface Props {
   articles: Article[];
+  menu: Menu;
   onBlogItemPressed?: (item) => void
   searchArticles?: (search) => void
   loadMoreArticles: () => void
@@ -51,4 +54,5 @@ class BlogArticlesController extends React.PureComponent<Props, State> {
 
 export default compose(
   withArticles,
+  withBlogMenu
 )(BlogArticlesController);

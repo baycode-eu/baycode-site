@@ -86,7 +86,7 @@ const LandingPage = (props: Props) => {
         projects={props.projects}
         companies={props.companies}
       />}
-  />;
+  />
 }
 
 export default LandingPage;

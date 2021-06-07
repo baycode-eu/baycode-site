@@ -49,7 +49,7 @@ class LandingPageController extends React.PureComponent<Props, State>
 
   render = () => <LandingPageView
     {...this.props}
-  />;
+  />
 }
 
 export default compose(
